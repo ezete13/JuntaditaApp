@@ -1,0 +1,285 @@
+/* 🎨 PALETA DE COLORES */
+:root {
+  --color-primario: #001a27;
+  --color-secundario: #ef9d1c;
+  --color-secundario-hover: #fab341;
+  --color-borde: #c57000;
+  --color-fondo: #fdfaf5;
+  --color-lista: #fde9c9;
+  --color-error: #fa6358;
+}
+
+/* 🎨 TIPOGRAFÍA */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-primario);
+  text-align: center;
+}
+
+.background-container {
+  position: fixed; /* Fija el fondo */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at top right,
+      transparent 20%,
+      #c57000 10%,
+      #c57000 20%,
+      transparent 21%
+    ),
+    radial-gradient(
+      circle at left bottom,
+      transparent 20%,
+      #c57000 10%,
+      #c57000 20%,
+      transparent 21%
+    ),
+    radial-gradient(
+      circle at top left,
+      transparent 20%,
+      #c57000 10%,
+      #c57000 20%,
+      transparent 21%
+    ),
+    radial-gradient(
+      circle at right bottom,
+      transparent 20%,
+      #c57000 10%,
+      #c57000 20%,
+      transparent 21%
+    ),
+    radial-gradient(circle at center, #e3ae46 30%, transparent 31%);
+  background-size: 2em 2em;
+  opacity: 0.25;
+  z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+/* 📌 TITULOS */
+h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+/* 📦 CONTENEDORES */
+.card-container {
+  max-width: 450px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 5px 5px 0px var(--color-primario);
+  border: 3px solid var(--color-primario);
+}
+
+/* 🎯 BOTONES */
+.button {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  padding: 0.8rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: 3px solid var(--color-primario);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--color-secundario-hover);
+  border-color: var(--color-borde);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+/* 📌 INPUTS */
+.input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  border: 3px solid var(--color-primario);
+  border-radius: 50px;
+  background-color: var(--color-fondo);
+  font-weight: bold;
+}
+
+.input::placeholder {
+  color: #646464;
+  font-style: italic;
+}
+
+.input:focus {
+  border-color: var(--color-borde);
+  background-color: #fcefe7;
+}
+
+/* 📜 LISTA DE ELEMENTOS */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  background-color: var(--color-lista);
+  border-radius: 50px;
+  border: 3px solid var(--color-primario);
+  transition: transform 0.2s ease;
+}
+
+.list-item:hover {
+  background-color: #fcd8a4;
+}
+
+.list-item .content {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* 🗑️ ICONOS */
+.list-item .icon {
+  font-size: 1.3rem;
+  color: var(--color-primario);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.list-item .icon:hover {
+  color: var(--color-borde);
+}
+
+/* 🔴 MODAL ERRORES */
+.modal-content {
+  border-radius: 20px;
+  background-color: var(--color-fondo);
+  box-shadow: 5px 5px 0px var(--color-primario);
+}
+
+.modal-header {
+  background-color: var(--color-error);
+  color: var(--color-primario);
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 1rem;
+  padding: 1.5rem;
+}
+
+.modal-footer .btn {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  border: 3px solid var(--color-primario);
+}
+
+.modal-footer .btn-primary {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: var(--color-secundario-hover);
+}
+
+.modal-footer .btn-secondary {
+  background-color: white;
+  color: var(--color-primario);
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: var(--color-lista);
+}
+
+/* 🎁 BOTÓN DE PROPINA MEJORADO */
+.propina-button {
+  display: inline-flex; /* Cambiado a inline-flex para centrado */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Asegura que el enlace no tenga subrayado */
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: 3px solid var(--color-primario);
+  box-shadow: 4px 4px 0px var(--color-primario);
+  transition: all 0.3s ease, transform 0.2s ease;
+  gap: 8px;
+}
+
+.propina-button i {
+  font-size: 1.3rem;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.propina-button:hover {
+  background-color: var(--color-secundario-hover);
+  border-color: var(--color-borde);
+  transform: scale(1.05);
+}
+
+/* ✨ ANIMACIÓN DEL ICONO */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* Estilo para los botones de redes sociales */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--color-secundario);
+}
+
+.social-icon i {
+  margin-right: 5px;
+}
+
+/* Estilo del Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-primario);
+  color: white;
+  margin-top: 2rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.link-dark {
+  font-size: 0.9rem;
+  font-weight: bold;
+}

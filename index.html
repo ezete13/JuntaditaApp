@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="assets/icons/bootstrap-icons.min.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400..700&family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" />
+    <meta
+      name="description"
+      content="Juntadita te ayuda a dividir los gastos con amigos de manera rápida y sencilla. Calcula cuánto debe pagar cada persona y ahorra tiempo. ¡Pruébalo ahora!"
+    />
+    <title>Juntadita - Calcula y divide gastos de reuniones con amigos</title>
+  </head>
+
+  <body>
+    <!-- Contenedor principal -->
+    <div class="background-container"></div>
+    <!-- H1 oculto para SEO -->
+    <h1 class="visually-hidden-focusable">
+      Juntadita - Calcula y divide gastos de reuniones con amigos
+    </h1>
+
+    <main class="container px-4 py-2 bg">
+      <!-- Hero Section -->
+      <div class="text-center pt-4">
+        <img
+          src="/assets/img/LogoJuntadita.webp"
+          alt="Logo de Juntadita, calculadora y divisor de gastos de reuniones con amigos"
+          class="img-fluid w-75"
+        />
+      </div>
+
+      <!-- Sección Agregar Personas -->
+      <div class="card-container animate__animated animate__bounceIn">
+        <h2 class="mb-4 text-center">AGREGAR PERSONA</h2>
+        <form id="formularioPersona">
+          <div class="mb-3">
+            <label class="visually-hidden-focusable">Nombre/apodo</label>
+            <input
+              type="text"
+              class="input"
+              id="nombre"
+              placeholder="Nombre/Apodo"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="visually-hidden-focusable">Cantidad</label>
+            <input
+              type="text"
+              class="input"
+              id="cantidad"
+              placeholder="¿Cuánto puso?"
+            />
+          </div>
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="button"
+              id="botonAgregar"
+              aria-label="Agregar Persona"
+            >
+              <i class="bi bi-person-plus-fill mx-1"></i>AGREGAR
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Lista de Personas -->
+      <div
+        class="card-container animate__animated animate__bounceIn"
+        id="seccionLista"
+      >
+        <h2 class="mb-4 text-center">LISTA DE PERSONAS</h2>
+        <div id="listaPersonas">
+          <div class="d-grid"></div>
+        </div>
+      </div>
+
+      <!-- Resultados del Cálculo -->
+      <div
+        class="card-container animate__animated animate__bounceIn"
+        id="seccionResultados"
+      >
+        <h2 class="mb-4 text-center">RESULTADO DEL CALCULO</h2>
+        <h3 id="montoIndividual">Por persona:</h3>
+
+        <div id="listaPagos">
+          <div class="d-grid"></div>
+        </div>
+        <div class="d-grid">
+          <button
+            type="submit"
+            class="button"
+            id="botonCompartir"
+            aria-label="Compartir en WhatsApp"
+          >
+            <i class="bi bi-whatsapp mx-1"></i>COMPARTIR
+          </button>
+        </div>
+      </div>
+
+      <!-- Apoyo al Proyecto -->
+      <div class="card-container animate__animated animate__bounceIn">
+        <h2 class="mb-4 text-center">💝 Apoya el Proyecto</h2>
+        <p>Si te fue útil, considera dejar una propina 💰 ¡Gracias!</p>
+        <div class="d-grid">
+          <a
+            href="https://link.mercadopago.com.ar/juntadita"
+            class="button propina-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="bi bi-gift-fill mx-1"></i> ¡Dejar Propina!
+          </a>
+        </div>
+      </div>
+
+      <!-- Modal Error -->
+      <div
+        class="modal fade container"
+        id="modalError"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">
+                <i class="bi bi-exclamation-circle-fill mx-1"></i>¡Espera!
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p id="modalErrorMensaje"></p>
+              <!-- Mensaje dinámico -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div class="social-media p-4">
+        <a
+          href="www.linkedin.com/in/telloezequiel"
+          target="_blank"
+          class="social-icon"
+          aria-label="Visitar LinkedIn del Creador"
+        >
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a
+          href="https://x.com/Ezete38"
+          target="_blank"
+          class="social-icon"
+          aria-label="Visitar X del Creador"
+        >
+          <i class="bi bi-twitter-x"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/telloezequiel8/"
+          target="_blank"
+          class="social-icon"
+          aria-label="Visitar Instagram del Creador"
+        >
+          <i class="bi bi-instagram"></i>
+        </a>
+        <!-- Agrega más enlaces si tienes otras redes -->
+      </div>
+
+      <!-- Reportar Error -->
+      <div class="d-grid p-2">
+        <a
+          href="mailto:telloezequiel8@gmail.com?subject=Reporte%20de%20Error&body=Por%20favor%20describa%20el%20error%20aqui..."
+          class="link-dark"
+        >
+          <i class="bi bi-exclamation-circle-fill mx-1"></i> REPORTAR ERROR
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Juntadita. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(() => console.log("Service Worker registrado"))
+          .catch((error) =>
+            console.error("Error registrando el Service Worker", error)
+          );
+      }
+    </script>
+  </body>
+</html>
