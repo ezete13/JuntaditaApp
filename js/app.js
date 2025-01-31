@@ -187,7 +187,7 @@ function compartirWhatsApp() {
   
   // Agregar firma con link y opción de propina
   mensaje += "\n📊 Calculado con *Juntadita* 🎉\n";
-  mensaje += "🌐 Visita: https://tu-web.com\n";
+  mensaje += "🌐 Visita: https://juntadita-app.vercel.app/\n";
   mensaje += "💖 Si te fue útil, considera dejar una propina 💰\n";
   mensaje += "🔗 Propina: https://link.mercadopago.com.ar/juntadita\n";
   
